@@ -1,3 +1,4 @@
+
 @extends('layouts.master')
 @section('body')
         <div class="carousel h-screen overflow-hidden">
@@ -112,4 +113,5 @@
             </div>
         </div>
     
+
 @endsection

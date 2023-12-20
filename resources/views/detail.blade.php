@@ -22,6 +22,7 @@
                         </div>
                     </a>
 
+
                     <div class="flex flex-col">
                         <div class="join mb-1">
                             <p>01. </p>
@@ -86,12 +87,17 @@
                         <a class="btn rounded-full bg-pink-regis border-pink-regis " href="">
                             <div class="join  text-white hover:text-black">
                                 <img src="{{ URL::asset('assets/icon_addcart.svg') }}" alt="">
-                                <p class="pl-1 self-center">Add to Cart</p>
+                                <form method="POST" action="{{ route('cart.add', ['id' => $product->id]) }}">
+                               @csrf
+                               <button type="submit class="pl-1 self-center"">Add to Cart</button>
                             </div>
+                              
                         </a>
 
                     </div>
             </div>
         </div>
 
+</form>
 @endsection
+

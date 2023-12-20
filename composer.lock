@@ -4,7 +4,11 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
+
+  //  "content-hash": "553081a1dd5313a5936958b505fd08af", punya pris
+
     "content-hash": "9e3483bc74c1674be2490be4bf2103c6",
+
     "packages": [
         {
             "name": "brick/math",

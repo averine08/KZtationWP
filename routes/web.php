@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PenggunaController;
 use App\Http\Controllers\PromoController;
 use App\Http\Controllers\ArtistController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\PaymentHeaderController;
 use App\Http\Controllers\PaymentDetailController;
@@ -29,11 +30,17 @@ use Illuminate\Support\Facades\Auth;
 Route::view('/login', 'login')->name('login');
 // Route::view('/home', 'home');
 Route::view('/register', 'register')->name('register');
-// Route::middleware(['auth.user'])->group(function(){
-//     Route::view('/cart', 'cart')->name('cart');
-//     Route::view('/payment', 'payment')->name('payment');
-//     Route::view('/transactionhistory', 'transactionhistory')->name('transactionhistory');
-// });
+
+Route::middleware(['auth.user'])->group(function(){
+    // Route::view('/cart', 'cart')->name('cart');
+    Route::get('/cart/{id}', [CartController::class, 'view_cart']);
+    // routes/web.php
+    Route::post('/cart/add/{id}', [CartController::class, 'addToCart'])->name('cart.add');
+
+    Route::view('/payment', 'payment')->name('payment');
+    Route::view('/transactionhistory', 'transactionhistory')->name('transactionhistory');
+});
+
 
 Route::post('/login', [UserAuth::class,'userlogin']);
 Route::post('/register', [UserAuth::class,'userRegister']);
@@ -59,7 +66,8 @@ Route::get('/user/{params_id}', [UserController::class, 'find_one_pengguna']);
 Route::patch('/user/{params_id}', [UserController::class, 'update_one_pengguna']);
 Route::delete('/user/{params_id}', [UserController::class, 'delete_one_pengguna']);
 
-// // Promo
+
+// Promo
 // Route::get('/promo', [PromoController::class, 'get_all_promo']);
 // Route::post('/promo', [PromoController::class, 'create_promo']);
 // Route::delete('/promo', [PromoController::class, 'delete_all_promo']);
@@ -114,33 +122,18 @@ Route::get('/payment-detail/{params_id}', [PaymentDetailController::class, 'find
 Route::patch('/payment-detail/{params_id}', [PaymentDetailController::class, 'update_one_paymentdetail']);
 Route::delete('/payment-detail/{params_id}', [PaymentDetailController::class, 'delete_one_paymentdetail']);
 
+  
 Route::get('transactionhistory', function(){
     return view('layouts/transactionhistory');
 });
-
-// Route::get('/detail', function(){
-//     return view('layouts/detail');
-// });
-
-// Route::get('cart', function(){
-//     return view('layouts/cart');
-// });
-
-// Route::get('/product', function(){
-//     return view('layouts/product');
-// });
-
-
-
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-//Ave Test
-Route::get('/cart', function(){
-    return view('cart');
-})->name('cart');
-
 Route::get('/', [HomeController::class, 'index'])->name('home');
-
 Auth::routes();
+
+
+
+
+
+
+
 
 

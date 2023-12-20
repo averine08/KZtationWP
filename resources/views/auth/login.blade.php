@@ -53,6 +53,7 @@
 
                         <div class="row mb-0">
                             <div class="col-md-8 offset-md-4">
+
                                 <button type="submit" class="btn" style="background-color: #CF95AF; color: white">
                                     {{ __('Login') }}
                                 </button>
@@ -62,6 +63,7 @@
                                         {{ __('Forgot Your Password?') }}
                                     </a>
                                 @endif --}}
+
                             </div>
                         </div>
                     </form>
