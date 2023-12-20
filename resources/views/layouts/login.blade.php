@@ -22,7 +22,7 @@
 
                             <div class="font-bold text-7xl pt-10 pl-7">
                                 
-                                <h2 class="mt-1 mb-5 pb-1 text-pink-regis"  >SIGN IN</h2>
+                                <h2 class="mt-16 mb-5 pb-1 text-pink-regis"  >SIGN IN</h2>
                             </div>
                             
                             <div class="pl-7 join join-vertical text-2xl mt-10">
