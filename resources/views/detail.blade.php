@@ -14,7 +14,7 @@
                             <div class="join join-vertical self-center">
                                 <div class="join">
                                     <p class=" text-2xl">Listen to</p>
-                                    <p class=" text-2xl font-bold pl-2">{{$artist->artist_name}}</p>
+                                    <p class=" text-2xl font-bold pl-2">{{$product -> artist -> artist_name}}</p>
                                 </div>
                                 <p>On Youtube</p>
                             </div>

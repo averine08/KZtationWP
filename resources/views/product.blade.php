@@ -3,6 +3,7 @@
 @section('body')
 
 
+
   <div class="mt-40 content-start w-full ml-24">
     <h1 class="text-ungu text-4xl font-bold leading-4">
         ALBUM
@@ -16,25 +17,36 @@
   </div>
 
  
+
   <div class="container ml-24 mt-20 grid grid-cols-4 content-evenly">
 
+    @if ($albums->isEmpty())
+        <div class="container flex justify-center w-full col-span-full">
+          <h1 class="text-4xl self-center text-slate-300"> 
+            This Artist Has No Album
+          </h1>
+        </div>
+        
+        
+    @else
     @foreach($albums as $pr)
 
-    <a href="/product/{{ ($pr->id) }}/details" >
-        <div class="card bg-base-100 shadow-xl image-full mb-9" style="width: 300px; height : 300px">
-        <figure><img src="{{  asset($pr->ProductPhoto) }}" alt=""  /></figure>
-        <div class="card-body items-center self-end">
+<a href="/product/{{ ($pr->id) }}/details" >
+    <div class="card bg-base-100 shadow-xl image-full mb-9" style="width: 300px; height : 300px">
+    <figure><img src="{{  asset($pr->ProductPhoto) }}" alt=""  /></figure>
+    <div class="card-body items-center self-end">
 
-            <div class="bg-black opacity-50 hover:opacity-100">
-                <h2 class="card-title text-white text-xl">{{ ($pr->ProductName) }}</h2>
-            </div>
-         
-          
+        <div class="bg-black opacity-50 hover:opacity-100">
+            <h2 class="card-title text-white text-xl">{{ ($pr->ProductName) }}</h2>
         </div>
-    </div> 
-    </a>
-    @endforeach
-    
+     
+      
+    </div>
+  </div> 
+</a>
+@endforeach
+
+    @endif
     
 
   </div>

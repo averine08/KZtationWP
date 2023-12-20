@@ -7,7 +7,7 @@
                     <div class="flex flex-col w-full h-screen items-center justify-center">
                         <img src="{{ URL::asset('assets/logo_white.svg') }}" class="w-[20%]" alt="logo">
                         <h1 class="text-white">Trusted Kpop Store in The World</h1>
-                        <button class="btn glass bg-pink m-2"><a href="#" class="px-4">Shop Now</a></button>
+                        <button class="btn glass bg-pink m-2"><a href="{{ route('getAllProduct') }}" class="px-4">Shop Now</a></button>
                     </div>
                 </div>
                 <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
@@ -22,7 +22,7 @@
                     <div class="flex flex-col w-full h-screen items-center justify-center">
                         <img src="{{ URL::asset('assets/logo_white.svg') }}" class="w-[20%]" alt="logo">
                         <h1 class="text-white">Trusted Kpop Store in The World</h1>
-                        <button class="btn glass bg-pink m-2"><a href="#" class="px-4">Shop Now</a></button>
+                        <button class="btn glass bg-pink m-2"><a href="{{ route('getAllProduct') }}" class="px-4">Shop Now</a></button>
                     </div>
                 </div>
                 <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
@@ -36,7 +36,7 @@
                     <div class="flex flex-col w-full h-screen items-center justify-center">
                         <img src="{{ URL::asset('assets/logo_white.svg') }}" class="w-[20%]" alt="logo">
                         <h1 class="text-white">Trusted Kpop Store in The World</h1>
-                        <button class="btn glass bg-pink m-2"><a href="#" class="px-4">Shop Now</a></button>
+                        <button class="btn glass bg-pink m-2"><a href="{{ route('getAllProduct') }}" class="px-4">Shop Now</a></button>
                     </div>
                 </div>
                 <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
@@ -55,13 +55,13 @@
 
             <div class="flex max-w-full my-4 flex-wrap justify-stretch">
                 @foreach ($trendings as $item)
-                <a href="">
+                <a href="{{ route('detail', $item->id) }}">
                      {{-- href="{{ route('allproduct') }}" --}}
                     <div class="flex flex-col w-[220px] rounded-md gap-0 p-4">
                         <img src="{{ URL::asset($item->ProductPhoto) }}" class="w-full rounded-lg" alt="logo">
                         <p id="artist-name" class="text-ungu text-sm leading-6">{{ $item->artist->artist_name }}</p>
                         <p class="text-lg font-semibold text-ungu leading-4">{{ $item->ProductName }}</p>
-                        <p class="text-merah text-lg leading-6 font-semibold">{{ $item->ProductPrice }}</p>
+                        <p class="text-merah text-lg leading-6 font-semibold">Rp{{ $item->ProductPrice }}</p>
                     </div>
                 </a>
                     
@@ -96,49 +96,19 @@
 
         <div class="flex flex-col mx-16 my-20">
             <h1 class="text-ungu text-2xl font-bold">NEW ALBUM</h1>
-            <p class="text-ungu">Fresh updated Kpop star album | <span class="text-pink-dark font-bold"> <a href="#" class="hover:text-ungu">View All</a></span></p>
+            <p class="text-ungu">Fresh updated Kpop star album</p>
 
             <div class="flex max-w-full my-4 flex-wrap justify-stretch">
-                <a href="#">
-                    <div class="flex flex-col w-[220px] rounded-md gap-0 p-4">
-                        <img src="{{ URL::asset('assets/Album/Album_Jennie_Solo.jpg') }}" class="w-full rounded-lg" alt="logo">
-                        <p id="artist-name" class="text-ungu text-sm leading-6">JENNIE</p>
-                        <p class="text-lg font-semibold text-ungu leading-4">SOLO</p>
-                        <p class="text-merah text-lg leading-6 font-semibold">Rp 392.000</p>
-                    </div>
-                </a>
-                <a href="#">
-                    <div class="flex flex-col w-[220px] rounded-md gap-0 p-4">
-                        <img src="{{ URL::asset('assets/Album/Album_Jennie_Solo.jpg') }}" class="w-full rounded-lg" alt="logo">
-                        <p id="artist-name" class="text-ungu text-sm leading-6">JENNIE</p>
-                        <p class="text-lg font-semibold text-ungu leading-4">SOLO</p>
-                        <p class="text-merah text-lg leading-6 font-semibold">Rp 392.000</p>
-                    </div>
-                </a>
-                <a href="#">
-                    <div class="flex flex-col w-[220px] rounded-md gap-0 p-4">
-                        <img src="{{ URL::asset('assets/Album/Album_Jennie_Solo.jpg') }}" class="w-full rounded-lg" alt="logo">
-                        <p id="artist-name" class="text-ungu text-sm leading-6">JENNIE</p>
-                        <p class="text-lg font-semibold text-ungu leading-4">SOLO</p>
-                        <p class="text-merah text-lg leading-6 font-semibold">Rp 392.000</p>
-                    </div>
-                </a>
-                <a href="#">
-                    <div class="flex flex-col w-[220px] rounded-md gap-0 p-4">
-                        <img src="{{ URL::asset('assets/Album/Album_Jennie_Solo.jpg') }}" class="w-full rounded-lg" alt="logo">
-                        <p id="artist-name" class="text-ungu text-sm leading-6">JENNIE</p>
-                        <p class="text-lg font-semibold text-ungu leading-4">SOLO</p>
-                        <p class="text-merah text-lg leading-6 font-semibold">Rp 392.000</p>
-                    </div>
-                </a>
-                <a href="#">
-                    <div class="flex flex-col w-[220px] rounded-md gap-0 p-4">
-                        <img src="{{ URL::asset('assets/Album/Album_Jennie_Solo.jpg') }}" class="w-full rounded-lg" alt="logo">
-                        <p id="artist-name" class="text-ungu text-sm leading-6">JENNIE</p>
-                        <p class="text-lg font-semibold text-ungu leading-4">SOLO</p>
-                        <p class="text-merah text-lg leading-6 font-semibold">Rp 392.000</p>
-                    </div>
-                </a>
+                @foreach ($latest_album as $na )
+                    <a href="{{ route('detail', $na->id) }}">
+                        <div class="flex flex-col w-[220px] rounded-md gap-0 p-4">
+                            <img src="{{ URL::asset($na->ProductPhoto) }}" class="w-full rounded-lg" alt="logo">
+                            <p id="artist-name" class="text-ungu text-sm leading-6">$na->artist->artist_name</p>
+                            <p class="text-lg font-semibold text-ungu leading-4">{{  $na->ProductName}}</p>
+                            <p class="text-merah text-lg leading-6 font-semibold">Rp {{ $na->ProductPrice }}</p>
+                        </div>
+                    </a> 
+                @endforeach
             </div>
         </div>
     

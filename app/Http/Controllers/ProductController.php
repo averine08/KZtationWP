@@ -11,9 +11,8 @@ class ProductController extends Controller
     public function get_all_product()
     {
         $data = Product::all();
-              return response()->json([
-            "data" => $data
-        ]);
+
+        return view('viewallproduct', compact('data'));
     }
 
     public function get_products_by_id($artistId)
@@ -89,7 +88,7 @@ class ProductController extends Controller
     public function productDetails($id)
     {
         $product = Product::find($id);
-        $artist = Artist::find($product->id);
+        $artist = Artist::find($product->artist_id);
         
         return view('detail', ['product' => $product, 'artist' => $artist]);
     }

@@ -41,7 +41,7 @@
             <div class="navbar-center hidden lg:flex">
                 <ul class="menu menu-horizontal px-1">
                     <li><a class="text-white text-base" href="{{ route('home') }}">Home</a></li>
-                    <li><a class="text-white text-base" href="">Shop</a></li>
+                    <li><a class="text-white text-base" href="{{ route('getAllProduct') }}">Shop</a></li>
                     <li><a class="text-white text-base">FAQ</a></li>
                 </ul>
             </div>
@@ -87,6 +87,9 @@
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                             @csrf
                                         </form>
+                                    </li>
+                                    <li class="w-full">                                    
+                                        <a class="text-white text-left leading-6" href="{{ route('home') }}">Transaction History</a>
                                     </li>
                                 
                                 </ul>

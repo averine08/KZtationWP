@@ -84,7 +84,7 @@ Route::get('/register', function(){
 });
 
 // Product
-// Route::get('/product', [ProductController::class, 'get_all_product'])->name('getAllProduct');
+Route::get('/viewallproduct', [ProductController::class, 'get_all_product'])->name('getAllProduct');
 Route::post('/product', [ProductController::class, 'create_product']);
 Route::delete('/product', [ProductController::class, 'delete_all_product']);
 // Route::get('/product/{params_id}', [ProductController::class, 'find_one_product']);
