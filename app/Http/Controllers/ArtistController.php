@@ -8,7 +8,7 @@ class ArtistController extends Controller
 {
     public function get_all_artist() {
         $data = Artist::all();
-        return view('artists', compact('data'));
+        return view('artist', compact('data'));
         // return response()->json([
         //     "data" => $data
         // ]);
