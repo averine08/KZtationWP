@@ -15,14 +15,17 @@
     <p>User is not authenticated. Welcome, guest!</p>
 @endauth --}}
 
-@if (auth()->check())
-    {{-- User is authenticated --}}
+{{-- @if (auth()->check())
     <p>Welcome, {{ auth()->user()->name }}</p>
 @else
-    {{-- User is not authenticated --}}
     <p>Please log in</p>
     <a href="{{ route('/login') }}">Login</a>
-@endif
+@endif --}}
+
+<div class="container">
+    <h1>Home</h1>
+    <p>{{ $welcomeMessage }}</p>
+</div>
 
 
 

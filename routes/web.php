@@ -9,6 +9,9 @@ use App\Http\Controllers\ArtistController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\PaymentHeaderController;
 use App\Http\Controllers\PaymentDetailController;
+use App\Http\Controllers\UserAuth;
+use App\Http\Controllers\UserController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,17 +28,19 @@ Route::get('/', function () {
 });
 
 Route::view('/login', 'login');
-Route::view('/home', 'home');
-Route::post('/login', [PenggunaAuth::class,'userlogin']);
-Route::get('/home', [PenggunaAuth::class, 'home']);
+// Route::view('/home', 'home');
+Route::view('/register', 'register');
+Route::post('/login', [UserAuth::class,'userlogin']);
+Route::post('/register', [UserAuth::class,'userRegister']);
+Route::get('/home', [UserAuth::class, 'home'])->name('home');
 Route::get('/{artist_name}/products', [ProductController::class, 'artistProducts'])->name('products');
 // Pengguna
-Route::get('/user', [PenggunaController::class, 'get_all_pengguna']);
-Route::post('/user', [PenggunaController::class, 'create_pengguna']);
-Route::delete('/user', [PenggunaController::class, 'delete_all_pengguna']);
-Route::get('/user/{params_id}', [PenggunaController::class, 'find_one_pengguna']);
-Route::patch('/user/{params_id}', [PenggunaController::class, 'update_one_pengguna']);
-Route::delete('/user/{params_id}', [PenggunaController::class, 'delete_one_pengguna']);
+Route::get('/user', [UserController::class, 'get_all_pengguna']);
+Route::post('/user', [UserController::class, 'create_pengguna']);
+Route::delete('/user', [UserController::class, 'delete_all_pengguna']);
+Route::get('/user/{params_id}', [UserController::class, 'find_one_pengguna']);
+Route::patch('/user/{params_id}', [UserController::class, 'update_one_pengguna']);
+Route::delete('/user/{params_id}', [UserController::class, 'delete_one_pengguna']);
 
 // Promo
 Route::get('/promo', [PromoController::class, 'get_all_promo']);
