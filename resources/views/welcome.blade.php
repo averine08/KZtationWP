@@ -140,6 +140,6 @@
                 </div>
             </div>
         </div>
-        <button class="btn w-64 rounded-full bg-pink text-putih">Button</button>
+        <button class="btn w-64 rounded-full bg-pink text-putih hover:bg-pink-dark">Button</button>
     </body>
 </html>
