@@ -19,7 +19,7 @@
             </div>
         </div>
     </div>
-    <a href="/artist">Go To Artist </a>
-    <a href="{{ route('cart')}}">Cart</a>
+    <a href="/artist">Go To Artist</a>
+    <a href="{{ route('cart.view', ['id' => auth()->user()->id])}}">Cart</a>
 </div>
 @endsection
