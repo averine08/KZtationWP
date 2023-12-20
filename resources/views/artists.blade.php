@@ -7,5 +7,6 @@
         @else
             <p>No photo available</p>
         @endif
-        <a href="{{ route('products', ['artist_name' => $artist->artist_name]) }}">View Products</a>
+        {{-- <a href="{{ route('products', ['artist_name' => $artist->artist_name]) }}">View Products</a> --}}
+        <a href="{{ route('products', ['id' => $artist->id]) }}">View Products</a>
     @endforeach
