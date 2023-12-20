@@ -17,7 +17,7 @@ return new class extends Migration
             $table->unsignedBigInteger("promoID");
             $table->string("payment_method");
             $table->boolean("status");
-            $table->foreign('userID')->references('id')->on('penggunas')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('userID')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('promoID')->references('id')->on('promos')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
