@@ -21,9 +21,10 @@ use App\Http\Controllers\PaymentDetailController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('layouts.home');
 });
 
+<<<<<<< HEAD
 Route::view('/login', 'login');
 Route::view('/home', 'home');
 Route::post('/login', [PenggunaAuth::class,'userlogin']);
@@ -76,3 +77,6 @@ Route::delete('/payment-detail', [PaymentDetailController::class, 'delete_all_pa
 Route::get('/payment-detail/{params_id}', [PaymentDetailController::class, 'find_one_paymentdetail']);
 Route::patch('/payment-detail/{params_id}', [PaymentDetailController::class, 'update_one_paymentdetail']);
 Route::delete('/payment-detail/{params_id}', [PaymentDetailController::class, 'delete_one_paymentdetail']);
+=======
+
+>>>>>>> dev
