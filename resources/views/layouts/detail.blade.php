@@ -1,8 +1,8 @@
 @extends('layouts.master')
 
 @section('body')
-        <div class="container mt-40 ml-48 content-start w-full">
-            <div class="w-full flex mb-10">
+        <div class="container mt-40 ml-48 content-start w-full ">
+            <div class="w-full flex mb-20">
                 <div>
                     <div class="card bg-base-100 shadow-xl image-full self-center" style="width: 450px; height : 450px">
                         <figure><img src="{{ URL::asset('assets/album/Album_Twice_What is love.jpeg') }}" alt="" /></figure>

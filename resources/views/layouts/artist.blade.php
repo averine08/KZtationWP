@@ -107,7 +107,7 @@
     </div> 
     </a>
     <a href="" >
-        <div class="card bg-base-100 shadow-xl image-full mb-9" style="width: 350px; height : 300px">
+        <div class="card bg-base-100 shadow-xl image-full mb-32" style="width: 350px; height : 300px">
         <figure><img src="{{ URL::asset('assets/slider_2.jpg') }}" alt="Shoes" /></figure>
         <div class="card-body items-center self-end">
 
