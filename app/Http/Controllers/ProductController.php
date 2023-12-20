@@ -51,8 +51,7 @@ class ProductController extends Controller
     public function artistProducts($artistName)
     {
         $artist = Artist::where('artist_name', $artistName)->first();
-    $products = $artist->products;
-
-    return view('products', ['artist' => $artist, 'products' => $products]);
+        $products = $artist->products;
+        return view('products', ['artist' => $artist, 'products' => $products]);
     }
 }

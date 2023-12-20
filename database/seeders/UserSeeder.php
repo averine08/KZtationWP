@@ -6,19 +6,19 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class PenggunaSeeder extends Seeder
+class UserSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        //
-        DB::table('penggunas')->insert([
+        DB::table('users')->insert([
             ['name' => 'Manusia', 
             'email' => 'manusia@gmail.com', 
-            'password' => bcrypt('manusiasakti'), 
+            'password' => 'manusiasakti', 
             'role' => 'admin',
+            'phonenumber' => "080000000000",
             'country' => 'Indonesia', 
             'city' => 'Jakarta Timur', 
             'address' => 'jl. a', 
@@ -26,8 +26,9 @@ class PenggunaSeeder extends Seeder
 
             ['name' => 'test', 
             'email' => 'test@gmail.com', 
-            'password' => bcrypt('test123'), 
+            'password' =>'test123', 
             'role' => 'customer',
+            'phonenumber' => "091234567890",
             'country' => 'Indonesia', 
             'city' => 'Jakarta Pusat', 
             'address' => 'jl. a', 
@@ -35,8 +36,9 @@ class PenggunaSeeder extends Seeder
 
             ['name' => 'oke', 
             'email' => 'oke@gmail.com', 
-            'password' => bcrypt('oke123'), 
+            'password' => 'oke123', 
             'role' => 'customer',
+            'phonenumber' => '081298765432',
             'country' => 'Indonesia', 
             'city' => 'Jakarta Selatan', 
             'address' => 'jl. a', 
