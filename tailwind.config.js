@@ -37,7 +37,9 @@ export default {
         'merah' :{
           DEFAULT : '#EE5F5F',
         }
-      }
+      },
+
+
     },
   },
   plugins: [require("daisyui")],

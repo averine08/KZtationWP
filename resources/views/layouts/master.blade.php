@@ -16,7 +16,7 @@
     <title>KZtation</title>
 </head>
 <body class="flex justify-center flex-col items-center">
-    <div class="navbar fixed z-30 bg-ungu rounded-md w-[96%] top-4 ">
+    <div class="navbar fixed z-30 bg-ungu rounded-md w-[96%] top-4 p-0 ">
             <div class="navbar-start">
                 <div class="dropdown">
                     <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -40,39 +40,50 @@
             </div>
             <div class="navbar-center hidden lg:flex">
                 <ul class="menu menu-horizontal px-1">
-                    <li><a class="text-white text-base">Home</a></li>
-                    <li><a class="text-white text-base">Shop</a></li>
+                    <li><a class="text-white text-base" href="{{ route('home') }}">Home</a></li>
+                    <li><a class="text-white text-base" href="{{ route('getAllProduct') }}">Shop</a></li>
                     <li><a class="text-white text-base">FAQ</a></li>
                 </ul>
             </div>
-            <div class="navbar-end">
-                <ul class="menu menu-horizontal px-1">
+            <div class="navbar-end ">
+                <ul class="menu menu-horizontal py-0 px-1 flex items-center">
                     <li class=" pe-2">
                         <a class="text-white text-base" href="#">
-                            <img src="{{ URL::asset('assets/icon_search.png') }}" alt="">
+                            <img src="{{ URL::asset('assets/icon_search.png') }}" class="w-[25px]">
+                        </a>
+                    </li>
+                    <li class=" pe-2">
+                        <a class="text-white text-base" href="{{ route('cart') }}">
+                            <img src="{{ URL::asset('assets/icon_cart.png') }}"  class="w-[25px]" alt="">
                         </a>
                     </li>
                     <li class=" pe-2">
                         <a class="text-white text-base" href="#">
-                            <img src="{{ URL::asset('assets/icon_cart.png') }}" alt="">
-                        </a>
-                    </li>
-                    <li class=" pe-2">
-                        <a class="text-white text-base" href="#">
-                            <img src="{{ URL::asset('assets/icon_user.png') }}" alt="">
+                            <img src="{{ URL::asset('assets/icon_user.png') }}"  class="w-[25px]" alt="">
                         </a>
                     </li>
                     <li class=" pe-2 flex items-center">
-                        <a class="btn text-white text-base]" style="line-height: 1.75rem" href="#">
+                        <a class="btn text-white text-base" style="line-height: 1.75rem" href="#">
                             Login
                         </a>
                     </li>
                 </ul>
             </div>
       </div>
-      <div class="overflow-hidden ">
+      <div class="overflow-hidden w-full ">
         @yield('body')
-        @yield('footer')
+        <div class="w-full bg-ungu flex items-center justify-between">
+            <img src="{{ URL::asset('assets/logo_white.svg') }}" class="w-[20%] p-16" alt="logo">
+            <div>
+                <p class="text-putih"> ©  All Right reserved</p>
+            </div>
+            <div class="p-16 flex flex-col gap-5">
+                <a href="{{ route('home') }}" class="text-putih" >Home</a>
+                <a href="{{ route('getAllProduct') }}" class="text-putih">Shop</a>
+                <a href="" class="text-putih">FAQ</a>
+                
+            </div>
+        </div>
       </div>
 </body>
 </html>

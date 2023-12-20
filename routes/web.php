@@ -9,6 +9,9 @@ use App\Http\Controllers\ArtistController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\PaymentHeaderController;
 use App\Http\Controllers\PaymentDetailController;
+use App\Http\Controllers\UserAuth;
+use App\Http\Controllers\UserController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,18 +27,24 @@ Route::get('/', function () {
     return view('layouts.home');
 });
 
+
+//Cart Test
+Route::get('/cart', function() {
+    return view('cart');
+})->name('cart') ;
+
 Route::view('/login', 'login');
-Route::view('/home', 'home');
-Route::post('/login', [PenggunaAuth::class,'userlogin']);
-Route::get('/home', [PenggunaAuth::class, 'home']);
+// Route::view('/home', 'home')->name('home');
+Route::post('/login', [UserAuth::class,'userlogin']);
+Route::get('/home', [UserAuth::class, 'home'])->name('home');
 Route::get('/{artist_name}/products', [ProductController::class, 'artistProducts'])->name('products');
 // Pengguna
-Route::get('/user', [PenggunaController::class, 'get_all_pengguna']);
-Route::post('/user', [PenggunaController::class, 'create_pengguna']);
-Route::delete('/user', [PenggunaController::class, 'delete_all_pengguna']);
-Route::get('/user/{params_id}', [PenggunaController::class, 'find_one_pengguna']);
-Route::patch('/user/{params_id}', [PenggunaController::class, 'update_one_pengguna']);
-Route::delete('/user/{params_id}', [PenggunaController::class, 'delete_one_pengguna']);
+Route::get('/user', [UserController::class, 'get_all_pengguna']);
+Route::post('/user', [UserController::class, 'create_pengguna']);
+Route::delete('/user', [UserController::class, 'delete_all_pengguna']);
+Route::get('/user/{params_id}', [UserController::class, 'find_one_pengguna']);
+Route::patch('/user/{params_id}', [UserController::class, 'update_one_pengguna']);
+Route::delete('/user/{params_id}', [UserController::class, 'delete_one_pengguna']);
 
 // Promo
 Route::get('/promo', [PromoController::class, 'get_all_promo']);
@@ -54,7 +63,7 @@ Route::patch('/artist/{params_id}', [ArtistController::class, 'update_one_artist
 Route::delete('/artist/{params_id}', [ArtistController::class, 'delete_one_artist']);
 
 // Product
-Route::get('/product', [ProductController::class, 'get_all_product']);
+Route::get('/product', [ProductController::class, 'get_all_product'])->name('getAllProduct');
 Route::post('/product', [ProductController::class, 'create_product']);
 Route::delete('/product', [ProductController::class, 'delete_all_product']);
 Route::get('/product/{params_id}', [ProductController::class, 'find_one_product']);
@@ -76,3 +85,4 @@ Route::delete('/payment-detail', [PaymentDetailController::class, 'delete_all_pa
 Route::get('/payment-detail/{params_id}', [PaymentDetailController::class, 'find_one_paymentdetail']);
 Route::patch('/payment-detail/{params_id}', [PaymentDetailController::class, 'update_one_paymentdetail']);
 Route::delete('/payment-detail/{params_id}', [PaymentDetailController::class, 'delete_one_paymentdetail']);
+
