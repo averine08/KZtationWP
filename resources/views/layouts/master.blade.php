@@ -70,7 +70,7 @@
                 </ul>
             </div>
       </div>
-      <div class="overflow-hidden ">
+      <div class="overflow-hidden w-full ">
         @yield('body')
         @yield('footer')
       </div>
