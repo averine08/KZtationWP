@@ -27,13 +27,21 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::view('/login', 'login');
+Route::view('/login', 'login')->name('login');
 // Route::view('/home', 'home');
-Route::view('/register', 'register');
+Route::view('/register', 'register')->name('register');
+Route::middleware(['auth.user'])->group(function(){
+    Route::view('/cart', 'cart')->name('cart');
+    Route::view('/payment', 'payment')->name('payment');
+    Route::view('/transactionhistory', 'transactionhistory')->name('transactionhistory');
+});
+
 Route::post('/login', [UserAuth::class,'userlogin']);
 Route::post('/register', [UserAuth::class,'userRegister']);
 Route::get('/home', [UserAuth::class, 'home'])->name('home');
-Route::get('/{artist_name}/products', [ProductController::class, 'artistProducts'])->name('products');
+Route::post('/logout', [UserAuth::class, 'userlogout'])->name('logout');
+Route::get('/{id}/products', [ProductController::class, 'artistProducts'])->name('products');
+Route::get('/product/{id}/details', [ProductController::class, 'productDetails'])->name('detail');
 // Pengguna
 Route::get('/user', [UserController::class, 'get_all_pengguna']);
 Route::post('/user', [UserController::class, 'create_pengguna']);
@@ -67,12 +75,12 @@ Route::patch('/product/{params_id}', [ProductController::class, 'update_one_prod
 Route::delete('/product/{params_id}', [ProductController::class, 'delete_one_product']);
 
 // Payment
-Route::get('/payment', [PaymentHeaderController::class, 'get_all_payment']);
-Route::post('/payment', [PaymentHeaderController::class, 'create_payment']);
-Route::delete('/payment', [PaymentHeaderController::class, 'delete_all_payment']);
-Route::get('/payment/{params_id}', [PaymentHeaderController::class, 'find_one_payment']);
-Route::patch('/payment/{params_id}', [PaymentHeaderController::class, 'update_one_payment']);
-Route::delete('/payment/{params_id}', [PaymentHeaderController::class, 'delete_one_payment']);
+// Route::get('/payment', [PaymentHeaderController::class, 'get_all_payment']);
+// Route::post('/payment', [PaymentHeaderController::class, 'create_payment']);
+// Route::delete('/payment', [PaymentHeaderController::class, 'delete_all_payment']);
+// Route::get('/payment/{params_id}', [PaymentHeaderController::class, 'find_one_payment']);
+// Route::patch('/payment/{params_id}', [PaymentHeaderController::class, 'update_one_payment']);
+// Route::delete('/payment/{params_id}', [PaymentHeaderController::class, 'delete_one_payment']);
 
 // PaymentDetail
 Route::get('/payment-detail', [PaymentDetailController::class, 'get_all_paymentdetail']);
