@@ -35,6 +35,7 @@ export default {
           DEFAULT: '#ECA3C3', // untuk button
           dark : '#CF95AF', // untuk teks
           regis : '#EAC4D5', // untuk login
+          back : '#FFFCFC', //untuk bg transaction history
         },
         'merah' :{
           DEFAULT : '#EE5F5F',
