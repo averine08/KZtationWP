@@ -46,7 +46,6 @@ Route::get('/user/{params_id}', [UserController::class, 'find_one_pengguna']);
 Route::patch('/user/{params_id}', [UserController::class, 'update_one_pengguna']);
 Route::delete('/user/{params_id}', [UserController::class, 'delete_one_pengguna']);
 
-<<<<<<< Updated upstream
 // Promo
 Route::get('/promo', [PromoController::class, 'get_all_promo']);
 Route::post('/promo', [PromoController::class, 'create_promo']);
@@ -62,7 +61,6 @@ Route::delete('/artist', [ArtistController::class, 'delete_all_artist']);
 Route::get('/artist/{params_id}', [ArtistController::class, 'find_one_artist']);
 Route::patch('/artist/{params_id}', [ArtistController::class, 'update_one_artist']);
 Route::delete('/artist/{params_id}', [ArtistController::class, 'delete_one_artist']);
-=======
 Route::get('/login', function(){
     return view('layouts/login');
 });
@@ -74,7 +72,6 @@ Route::get('/artist', function(){
 Route::get('/register', function(){
     return view('layouts/register');
 });
->>>>>>> Stashed changes
 
 // Product
 Route::get('/product', [ProductController::class, 'get_all_product'])->name('getAllProduct');
@@ -109,9 +106,9 @@ Route::get('/detail', function(){
     return view('layouts/detail');
 });
 
-Route::get('cart', function(){
-    return view('layouts/cart');
-});
+// Route::get('cart', function(){
+//     return view('layouts/cart');
+// });
 
 Route::get('/product', function(){
     return view('layouts/product');

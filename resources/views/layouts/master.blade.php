@@ -41,7 +41,7 @@
             <div class="navbar-center hidden lg:flex">
                 <ul class="menu menu-horizontal px-1">
                     <li><a class="text-white text-base" href="{{ route('home') }}">Home</a></li>
-                    <li><a class="text-white text-base" href="{{ route('getAllProduct') }}">Shop</a></li>
+                    <li><a class="text-white text-base" href="">Shop</a></li>
                     <li><a class="text-white text-base">FAQ</a></li>
                 </ul>
             </div>
@@ -79,7 +79,7 @@
             </div>
             <div class="p-16 flex flex-col gap-5">
                 <a href="{{ route('home') }}" class="text-putih" >Home</a>
-                <a href="{{ route('getAllProduct') }}" class="text-putih">Shop</a>
+                <a href="" class="text-putih">Shop</a>
                 <a href="" class="text-putih">FAQ</a>
                 
             </div>
