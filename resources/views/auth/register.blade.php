@@ -61,9 +61,25 @@
                             </div>
                         </div>
 
+
+                        <div class="row mb-3">
+                            <label for="phonenumber" class="col-md-4 col-form-label text-md-end">{{ __('Phone Number') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="phonenumber" type="text" class="form-control" name="phonenumber" required autocomplete="phone-number">
+                                
+                                @error('phonenumber')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn" style="background-color: #CF95AF; color: white">
+                                
                                     {{ __('Register') }}
                                 </button>
                             </div>

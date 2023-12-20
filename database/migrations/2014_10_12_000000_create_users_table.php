@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string("name");
             $table->string("email");
             $table->string("password");
-            $table->string("role")->nullable();
+            $table->string("role")->default('customer');
             $table->string('phonenumber')->nullable();
             $table->string('country')->nullable();
             $table->string('city')->nullable();

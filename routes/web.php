@@ -25,13 +25,12 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 Route::view('/login', 'login')->name('login');
 // Route::view('/home', 'home');
 Route::view('/register', 'register')->name('register');
+
 Route::middleware(['auth.user'])->group(function(){
     // Route::view('/cart', 'cart')->name('cart');
     Route::get('/cart/{id}', [CartController::class, 'view_cart']);
@@ -42,12 +41,23 @@ Route::middleware(['auth.user'])->group(function(){
     Route::view('/transactionhistory', 'transactionhistory')->name('transactionhistory');
 });
 
+
 Route::post('/login', [UserAuth::class,'userlogin']);
 Route::post('/register', [UserAuth::class,'userRegister']);
-Route::get('/home', [UserAuth::class, 'home'])->name('home');
+// Route::get('/home', [UserAuth::class, 'home'])->name('home');
 Route::post('/logout', [UserAuth::class, 'userlogout'])->name('logout');
-Route::get('/{id}/products', [ProductController::class, 'artistProducts'])->name('products');
-Route::get('/product/{id}/details', [ProductController::class, 'productDetails'])->name('detail');
+
+
+//Cart Test
+
+
+Route::view('/login', 'login');
+// Route::view('/home', 'home')->name('home');
+Route::post('/login', [UserAuth::class,'userlogin']);
+
+// Route::get('/home', [UserAuth::class, 'home'])->name('home');
+
+
 // Pengguna
 Route::get('/user', [UserController::class, 'get_all_pengguna']);
 Route::post('/user', [UserController::class, 'create_pengguna']);
@@ -55,6 +65,7 @@ Route::delete('/user', [UserController::class, 'delete_all_pengguna']);
 Route::get('/user/{params_id}', [UserController::class, 'find_one_pengguna']);
 Route::patch('/user/{params_id}', [UserController::class, 'update_one_pengguna']);
 Route::delete('/user/{params_id}', [UserController::class, 'delete_one_pengguna']);
+
 
 // Promo
 // Route::get('/promo', [PromoController::class, 'get_all_promo']);
@@ -65,20 +76,34 @@ Route::delete('/user/{params_id}', [UserController::class, 'delete_one_pengguna'
 // Route::delete('/promo/{params_id}', [PromoController::class, 'delete_one_promo']);
 
 // Artist
-Route::get('/artist', [ArtistController::class, 'get_all_artist']);
+Route::get('/artist', [ArtistController::class, 'get_all_artist'])->name('getAllArtist');
 Route::post('/artist', [ArtistController::class, 'create_artist']);
 Route::delete('/artist', [ArtistController::class, 'delete_all_artist']);
 Route::get('/artist/{params_id}', [ArtistController::class, 'find_one_artist']);
 Route::patch('/artist/{params_id}', [ArtistController::class, 'update_one_artist']);
 Route::delete('/artist/{params_id}', [ArtistController::class, 'delete_one_artist']);
+Route::get('/login', function(){
+    return view('layouts/login');
+});
+
+
+Route::get('/register', function(){
+    return view('layouts/register');
+});
 
 // Product
-Route::get('/product', [ProductController::class, 'get_all_product']);
+Route::get('/viewallproduct', [ProductController::class, 'get_all_product'])->name('getAllProduct');
 Route::post('/product', [ProductController::class, 'create_product']);
 Route::delete('/product', [ProductController::class, 'delete_all_product']);
-Route::get('/product/{params_id}', [ProductController::class, 'find_one_product']);
+// Route::get('/product/{params_id}', [ProductController::class, 'find_one_product']);
 Route::patch('/product/{params_id}', [ProductController::class, 'update_one_product']);
 Route::delete('/product/{params_id}', [ProductController::class, 'delete_one_product']);
+// Route::get('/product/{artist_id}', [ProductController::class, 'get_products_by_id']);
+Route::get('/{artistId}/product', [ProductController::class, 'artistProducts'])->name('product');
+Route::get('/product/{idProduct}/details', [ProductController::class, 'productDetails'])->name('detail');
+
+
+
 
 // Payment
 // Route::get('/payment', [PaymentHeaderController::class, 'get_all_payment']);
@@ -88,6 +113,7 @@ Route::delete('/product/{params_id}', [ProductController::class, 'delete_one_pro
 // Route::patch('/payment/{params_id}', [PaymentHeaderController::class, 'update_one_payment']);
 // Route::delete('/payment/{params_id}', [PaymentHeaderController::class, 'delete_one_payment']);
 
+
 // PaymentDetail
 Route::get('/payment-detail', [PaymentDetailController::class, 'get_all_paymentdetail']);
 Route::post('/payment-detail', [PaymentDetailController::class, 'create_paymentdetail']);
@@ -95,6 +121,19 @@ Route::delete('/payment-detail', [PaymentDetailController::class, 'delete_all_pa
 Route::get('/payment-detail/{params_id}', [PaymentDetailController::class, 'find_one_paymentdetail']);
 Route::patch('/payment-detail/{params_id}', [PaymentDetailController::class, 'update_one_paymentdetail']);
 Route::delete('/payment-detail/{params_id}', [PaymentDetailController::class, 'delete_one_paymentdetail']);
+
+  
+Route::get('transactionhistory', function(){
+    return view('layouts/transactionhistory');
+});
+Route::get('/', [HomeController::class, 'index'])->name('home');
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+
+
+
+
+
+
