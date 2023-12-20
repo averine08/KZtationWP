@@ -8,10 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     use HasFactory;
-    protected $fillable = ['artist_id', 'ProductName', 'ProductPhoto', 'ProductCat', 'ProductPrice', 'ProductReleaseDate', 'ProductRegion', 'ProductManufacturer', 'ProductContent', 'ProductLinkYoutube', 'ProductStock'];
+    protected $fillable = ['artist_id', 'ProductName', 'ProductPhoto', 'ProductCat', 'ProductPrice', 'ProductReleaseDate', 'ProductRegion', 'ProductManufacturer', 'ProductContent', 'ProductLinkYoutube', 'ProductStock', 'created_at', 'updated_at'];
 
     public function artist()
     {
         return $this->belongsTo(Artist::class);
     }
+
+    
 }

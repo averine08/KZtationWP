@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class PaymentHeader extends Model
 {
-    use HasFactory;
-    protected $fillable = ['userID', 'promoID', 'payment_method', 'status'];
+    protected $fillable = ['userID', 'payment_method', 'status'];
+
+    
+    
 }

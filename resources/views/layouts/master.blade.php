@@ -41,32 +41,60 @@
             <div class="navbar-center hidden lg:flex">
                 <ul class="menu menu-horizontal px-1">
                     <li><a class="text-white text-base" href="{{ route('home') }}">Home</a></li>
-                    <li><a class="text-white text-base" href="">Shop</a></li>
+                    <li><a class="text-white text-base" href="{{ route('getAllProduct') }}">Shop</a></li>
                     <li><a class="text-white text-base">FAQ</a></li>
                 </ul>
             </div>
-            <div class="navbar-end ">
+            <div class="navbar-end mr-4">
                 <ul class="menu menu-horizontal py-0 px-1 flex items-center">
                     <li class=" pe-2">
                         <a class="text-white text-base" href="#">
                             <img src="{{ URL::asset('assets/icon_search.png') }}" class="w-[25px]">
                         </a>
                     </li>
-                    <li class=" pe-2">
-                        <a class="text-white text-base" href="{{ route('cart') }}">
-                            <img src="{{ URL::asset('assets/icon_cart.png') }}"  class="w-[25px]" alt="">
-                        </a>
-                    </li>
-                    <li class=" pe-2">
-                        <a class="text-white text-base" href="#">
-                            <img src="{{ URL::asset('assets/icon_user.png') }}"  class="w-[25px]" alt="">
-                        </a>
-                    </li>
-                    <li class=" pe-2 flex items-center">
-                        <a class="btn text-white text-base" style="line-height: 1.75rem" href="#">
-                            Login
-                        </a>
-                    </li>
+
+                    @guest
+                        <li class=" pe-2">
+                            <a class="text-white text-base" href="{{ route('login') }}">
+                                <img src="{{ URL::asset('assets/icon_cart.png') }}"  class="w-[25px]" alt="">
+                            </a>
+                        </li>
+                            <li class=" pe-2 flex items-center">
+                                <a class="btn text-white text-base" style="line-height: 1.75rem" href="{{ route('login') }}">
+                                    Login
+                                </a>
+                            </li>
+                        @else
+                            <li class=" pe-2">
+                                <a class="text-white text-base" href="{{ route('cart') }}">
+                                    <img src="{{ URL::asset('assets/icon_cart.png') }}"  class="w-[25px]" alt="">
+                                </a>
+                            </li>
+                            <div class="dropdown dropdown-hover ">
+                                <div tabindex="0" role="button" class="btn m-1 border-white">
+                                    <img src="{{ asset('Assets/icon_user.svg') }}" class="w-8"> 
+                                    <p class="text-white">{{ Auth::user()->name }}</p>
+                                    <img src="{{ asset('Assets/icon_dropdown.svg') }}" alt=""> 
+                                </div>
+                                <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-pink-dark rounded-box w-full">
+                                    <li class="w-full">                                    
+                                        <a class="text-white text-center" href="{{ route('logout') }}"
+                                        onclick="event.preventDefault();
+                                                    document.getElementById('logout-form').submit();">
+                                            {{ __('Logout') }}
+                                        </a>
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                            @csrf
+                                        </form>
+                                    </li>
+                                    <li class="w-full">                                    
+                                        <a class="text-white text-left leading-6" href="{{ route('home') }}">Transaction History</a>
+                                    </li>
+                                
+                                </ul>
+                            </div>
+                        @endguest
                 </ul>
             </div>
       </div>

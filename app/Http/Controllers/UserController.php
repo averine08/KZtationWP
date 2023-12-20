@@ -40,7 +40,7 @@ class UserController extends Controller
         ]);
     }
     public function delete_one_pengguna($params_id) {
-        $data = Pengguna::find($params_id);
+        $data = User::find($params_id);
         $data->delete();
         return response()->json([
             "status" => "success"
