@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('payment_headers', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger("userID");
-            $table->string("payment_method");
+            $table->string("payment_method")->nullable();
             $table->string("status");
             $table->foreign('userID')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();

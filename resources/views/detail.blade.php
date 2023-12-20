@@ -14,3 +14,8 @@
 <p>Content: {{ $product->ProductContent }}</p>
 <p>Link to YouTube: {{ $product->ProductLinkYoutube }}</p>
 <p>Stock: {{ $product->ProductStock }}</p>
+
+<form method="POST" action="{{ route('cart.add', ['id' => $product->id]) }}">
+    @csrf
+    <button type="submit">Add to Cart</button>
+</form>

@@ -6,11 +6,13 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PenggunaController;
 use App\Http\Controllers\PromoController;
 use App\Http\Controllers\ArtistController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\PaymentHeaderController;
 use App\Http\Controllers\PaymentDetailController;
 use App\Http\Controllers\UserAuth;
 use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,7 +33,11 @@ Route::view('/login', 'login')->name('login');
 // Route::view('/home', 'home');
 Route::view('/register', 'register')->name('register');
 Route::middleware(['auth.user'])->group(function(){
-    Route::view('/cart', 'cart')->name('cart');
+    // Route::view('/cart', 'cart')->name('cart');
+    Route::get('/cart/{id}', [CartController::class, 'view_cart']);
+    // routes/web.php
+    Route::post('/cart/add/{id}', [CartController::class, 'addToCart'])->name('cart.add');
+
     Route::view('/payment', 'payment')->name('payment');
     Route::view('/transactionhistory', 'transactionhistory')->name('transactionhistory');
 });
@@ -51,12 +57,12 @@ Route::patch('/user/{params_id}', [UserController::class, 'update_one_pengguna']
 Route::delete('/user/{params_id}', [UserController::class, 'delete_one_pengguna']);
 
 // Promo
-Route::get('/promo', [PromoController::class, 'get_all_promo']);
-Route::post('/promo', [PromoController::class, 'create_promo']);
-Route::delete('/promo', [PromoController::class, 'delete_all_promo']);
-Route::get('/promo/{params_id}', [PromoController::class, 'find_one_promo']);
-Route::patch('/promo/{params_id}', [PromoController::class, 'update_one_promo']);
-Route::delete('/promo/{params_id}', [PromoController::class, 'delete_one_promo']);
+// Route::get('/promo', [PromoController::class, 'get_all_promo']);
+// Route::post('/promo', [PromoController::class, 'create_promo']);
+// Route::delete('/promo', [PromoController::class, 'delete_all_promo']);
+// Route::get('/promo/{params_id}', [PromoController::class, 'find_one_promo']);
+// Route::patch('/promo/{params_id}', [PromoController::class, 'update_one_promo']);
+// Route::delete('/promo/{params_id}', [PromoController::class, 'delete_one_promo']);
 
 // Artist
 Route::get('/artist', [ArtistController::class, 'get_all_artist']);
@@ -89,3 +95,6 @@ Route::delete('/payment-detail', [PaymentDetailController::class, 'delete_all_pa
 Route::get('/payment-detail/{params_id}', [PaymentDetailController::class, 'find_one_paymentdetail']);
 Route::patch('/payment-detail/{params_id}', [PaymentDetailController::class, 'update_one_paymentdetail']);
 Route::delete('/payment-detail/{params_id}', [PaymentDetailController::class, 'delete_one_paymentdetail']);
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

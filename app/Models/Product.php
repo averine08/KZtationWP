@@ -14,4 +14,9 @@ class Product extends Model
     {
         return $this->belongsTo(Artist::class);
     }
+
+    public function paymentDetails()
+    {
+        return $this->hasMany(PaymentDetail::class);
+    }
 }

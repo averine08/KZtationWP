@@ -1,47 +1,25 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    
-    <h1>home</h1>
+@extends('layouts.app')
 
-{{-- @auth
-    <p>User ID: {{ session('sessionId') }}</p>
-@else
-    <p>User is not authenticated. Welcome, guest!</p>
-@endauth --}}
-
-{{-- @if (auth()->check())
-    <p>Welcome, {{ auth()->user()->name }}</p>
-@else
-    <p>Please log in</p>
-    <a href="{{ route('/login') }}">Login</a>
-@endif --}}
-
+@section('content')
 <div class="container">
-    <h1>Home</h1>
-    <p>{{ $welcomeMessage }}</p>
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ __('Dashboard') }}</div>
 
-    @auth
-</form>
-    <form action="{{ route('logout') }}" method="POST">
-        @csrf
-        <button type="submit">Logout</button>
-    </form>
+                <div class="card-body">
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+
+                    {{ __('You are logged in!') }}
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="/artist">Go To Artist </a>
     <a href="{{ route('cart')}}">Cart</a>
-    <a href="{{ route('payment')}}">Payment</a>
-    <a href="{{ route('transactionhistory')}}">Transaction History</a>
-    @else
-    
-    <a href="{{ route('login') }}">Login</a>
-    @endauth
 </div>
-
-
-
-</body>
-</html>
+@endsection
