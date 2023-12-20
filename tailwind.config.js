@@ -26,6 +26,7 @@ export default {
       colors:{
         'ungu':{
           DEFAULT : '#4E6DA9', // gelap navbar
+          regis : '#809BCE', //untuk login
         },
         'putih' : {
           DEFAULT : '#FFFFFF',
@@ -33,6 +34,7 @@ export default {
         'pink' :{
           DEFAULT: '#ECA3C3', // untuk button
           dark : '#CF95AF', // untuk teks
+          regis : '#EAC4D5', // untuk login
         },
         'merah' :{
           DEFAULT : '#EE5F5F',
