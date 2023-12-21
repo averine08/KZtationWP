@@ -22,6 +22,11 @@
 
     <div class="flex container border border-ungu rounded ml-24 bg-pink-back h-full mb-20 shadow-xl">
         <div class="my-3">
+
+            @foreach ($collection as $item)
+                
+            @endforeach
+
             <div class="flex my-8 ml-3 ">
                 <div  class="ml-5">
                     <img src="{{ URL::asset('assets/album/Album_Twice_What is love.jpeg') }}" alt="" style="height : 100px; width : 100px">
