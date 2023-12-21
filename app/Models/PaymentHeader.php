@@ -9,6 +9,9 @@ class PaymentHeader extends Model
 {
     protected $fillable = ['userID', 'payment_method', 'status'];
 
-    
-    
+    public function paymentDetails()
+    {
+        return $this->hasMany(PaymentDetail::class);
+    }
+
 }

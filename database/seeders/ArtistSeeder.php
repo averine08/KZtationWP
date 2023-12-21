@@ -16,27 +16,27 @@ class ArtistSeeder extends Seeder
         DB::table('artists')->insert([
             [
                 'artist_name' => 'NewJeans',
-                'artist_photo' => 'assets/Artistss/NewJeans.jpeg',
+                'artist_photo' => 'assets/Artists/newjeans.jpeg',
                 'artist_agency' => 'Hybe'
             ],
             [
                 'artist_name' => 'Aespa',
-                'artist_photo' => 'assets/Artistss/aespa.jpg',
+                'artist_photo' => 'assets/Artists/aespa.jpg',
                 'artist_agency' => 'SM'
             ],
             [
                 'artist_name' => 'Ive',
-                'artist_photo' => 'assets/Artistss/ive.jpg',
+                'artist_photo' => 'assets/Artists/ive.jpg',
                 'artist_agency' => 'Starship'
             ],
             [
                 'artist_name' => 'Enhypen',
-                'artist_photo' => 'assets/Artistss/enhypen.png',
+                'artist_photo' => 'assets/Artists/enhypen.png',
                 'artist_agency' => 'Hybe'
             ],
             [
                 'artist_name' => 'KissofLife',
-                'artist_photo' => 'assets/Artistss/Kissoflife.jpg',
+                'artist_photo' => 'assets/Artists/Kissoflife.jpg',
                 'artist_agency' => 'Hybe'
             ]
         ]);

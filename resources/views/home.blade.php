@@ -1,3 +1,4 @@
+
 @extends('layouts.master')
 @section('body')
         <div class="carousel h-screen overflow-hidden">
@@ -45,6 +46,12 @@
                 </div>
             </div>
         </div>
+
+    </div>
+    {{-- <a href="/artist">Go To Artist</a>
+    <a href="{{ route('cart.view', ['id' => auth()->user()->id])}}">Cart</a> --}}
+</div>
+
         <div class="w-full flex items-center justify-center my-10 ">
             <img src="{{ URL::asset('assets/banner_1.svg') }}" class="w-[80%]" alt="logo">
         </div>
@@ -103,7 +110,7 @@
                     <a href="{{ route('detail', $na->id) }}">
                         <div class="flex flex-col w-[220px] rounded-md gap-0 p-4">
                             <img src="{{ URL::asset($na->ProductPhoto) }}" class="w-full rounded-lg" alt="logo">
-                            <p id="artist-name" class="text-ungu text-sm leading-6">$na->artist->artist_name</p>
+                            <p id="artist-name" class="text-ungu text-sm leading-6">{{ $na->artist->artist_name}}</p>
                             <p class="text-lg font-semibold text-ungu leading-4">{{  $na->ProductName}}</p>
                             <p class="text-merah text-lg leading-6 font-semibold">Rp {{ $na->ProductPrice }}</p>
                         </div>
@@ -112,4 +119,5 @@
             </div>
         </div>
     
+
 @endsection

@@ -61,6 +61,7 @@
                             </div>
                         </div>
 
+
                         <div class="row mb-3">
                             <label for="phonenumber" class="col-md-4 col-form-label text-md-end">{{ __('Phone Number') }}</label>
 
@@ -78,6 +79,7 @@
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn" style="background-color: #CF95AF; color: white">
+                                
                                     {{ __('Register') }}
                                 </button>
                             </div>

@@ -89,7 +89,7 @@
                                         </form>
                                     </li>
                                     <li class="w-full">                                    
-                                        <a class="text-white text-left leading-6" href="{{ route('home') }}">Transaction History</a>
+                                        <a class="text-white text-left leading-6" href="{{ route('transactionhistory') }}">Transaction History</a>
                                     </li>
                                 
                                 </ul>
