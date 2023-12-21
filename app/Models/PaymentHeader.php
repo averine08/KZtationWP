@@ -7,11 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class PaymentHeader extends Model
 {
-    use HasFactory;
     protected $fillable = ['userID', 'payment_method', 'status'];
-    
+
     public function paymentDetails()
     {
         return $this->hasMany(PaymentDetail::class);
     }
+
 }
