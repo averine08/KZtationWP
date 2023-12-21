@@ -123,13 +123,10 @@ Route::patch('/payment-detail/{params_id}', [PaymentDetailController::class, 'up
 Route::delete('/payment-detail/{params_id}', [PaymentDetailController::class, 'delete_one_paymentdetail']);
 
   
-Route::get('transactionhistory', function(){
-    return view('layouts/transactionhistory');
-});
+Route::get('/transactionhistory', function(){
+    return view('layouts.transactionhistory');
+})->name('transactionhistory');
 
-// Route::get('/cart', function(){
-//     return view('cart');
-// })->name('cart');
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Auth::routes();
 

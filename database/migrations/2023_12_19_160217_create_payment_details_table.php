@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger("payment_header_ID");
             $table->unsignedBigInteger("product_ID");
-            $table->integer("product_quantity");
+            $table->integer("product_quantity")->default(1);
             $table->foreign('payment_header_ID')->references('id')->on('payment_headers')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('product_ID')->references('id')->on('products')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();

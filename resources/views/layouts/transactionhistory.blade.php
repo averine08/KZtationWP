@@ -23,13 +23,11 @@
     <div class="flex container border border-ungu rounded ml-24 bg-pink-back h-full mb-20 shadow-xl">
         <div class="my-3">
 
-            @foreach ($collection as $item)
-                
-            @endforeach
+            
 
             <div class="flex my-8 ml-3 ">
                 <div  class="ml-5">
-                    <img src="{{ URL::asset('assets/album/Album_Twice_What is love.jpeg') }}" alt="" style="height : 100px; width : 100px">
+                    <img src="{{ URL::asset('Assets/Album/Twice_WhatIsLove.jpeg') }}" alt="" style="height : 100px; width : 100px">
                 </div>
                 <div class="flex flex-col ml-10 self-center">
                     <p class="text-ungu text-xl">
@@ -48,7 +46,7 @@
             </div>    
             <div class="flex my-8 ml-3 ">
                 <div  class="ml-5">
-                    <img src="{{ URL::asset('assets/album/Album_Twice_What is love.jpeg') }}" alt="" style="height : 100px; width : 100px">
+                    <img src="{{ URL::asset('Assets/Album/Twice_WhatIsLove.jpeg') }}" alt="" style="height : 100px; width : 100px">
                 </div>
                 <div class="flex flex-col ml-10 self-center">
                     <p class="text-ungu text-xl">
@@ -67,7 +65,7 @@
             </div>    
             <div class="flex my-8 ml-3 ">
                 <div  class="ml-5">
-                    <img src="{{ URL::asset('assets/album/Album_Twice_What is love.jpeg') }}" alt="" style="height : 100px; width : 100px">
+                    <img src="{{ URL::asset('Assets/Album/Twice_WhatIsLove.jpeg') }}" alt="" style="height : 100px; width : 100px">
                 </div>
                 <div class="flex flex-col ml-10 self-center">
                     <p class="text-ungu text-xl">
@@ -86,7 +84,7 @@
             </div>    
             <div class="flex my-8 ml-3 ">
                 <div  class="ml-5">
-                    <img src="{{ URL::asset('assets/album/Album_Twice_What is love.jpeg') }}" alt="" style="height : 100px; width : 100px">
+                    <img src="{{ URL::asset('Assets/Album/Twice_WhatIsLove.jpeg') }}" alt="" style="height : 100px; width : 100px">
                 </div>
                 <div class="flex flex-col ml-10 self-center">
                     <p class="text-ungu text-xl">

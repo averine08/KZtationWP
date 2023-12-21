@@ -1,4 +1,4 @@
-{{--
+{{-- 
 <h1>This is cart</h1>
 @if ($carts->count()!=0)
         @foreach ($carts as $cart_data)
@@ -35,17 +35,18 @@ testing pris --}}
                         </thead>
                         <tbody>
                             <!-- row 1 -->
+                            @foreach ($carts as $cart_data)
                             <tr>
                                 <td>
                                     <div class="flex items-center gap-3">
                                         <div class="avatar">
                                             <div class="rounded-lg w-24 h-24">
-                                                <img src="{{ asset('Assets/Album/Album_Jennie_Solo.jpg') }}" />
+                                                <img src="{{ $cart_data->product_ID->ProductPhoto }}" />
                                             </div>
                                         </div>
                                         <div>
-                                            <div class="font-bold">Solo</div>
-                                            <div class="text-sm opacity-50">Jennie</div>
+                                            <div class="font-bold">{{ $cart_data->product_ID-> ProductName}}</div>
+                                            <div class="text-sm opacity-50">{{ $cart_data->product_ID->artist_id->artist_name}}</div>
                                         </div>
                                     </div>
                                 </td>
@@ -72,12 +73,14 @@ testing pris --}}
                                             Rp. 
                                         </p>
                                         <p class="text-end pl-1" style="color: #777777">
-                                            Uang
+                                        {{ $cart_data->product_ID->ProductPrice}}
                                         </p>
                                     </div>   
                                 </td>
 
                             </tr>
+                            @endforeach
+                            
                         
                         </tbody>
 
@@ -129,21 +132,13 @@ testing pris --}}
                     <label class="form-control w-full mt-10 mx-3">
                         <div class="label pt-0">
                             <span class="label-text font-semibold">Payment Method</span>
-                          </div>
-    
+                        </div>
+
                     </label>
     
                     <div class="flex justify-evenly my-4">
-                        <div class="w-20">
-                            <button class="btn bg-black text-white hover: btn-white hover:text-black mr-10">Matercard</button>
-                        </div>
-    
-                        <div class="min-w-20 ml-4">
-                            <button class="btn w-full bg-black text-white hover: btn-white hover:text-black mr-10">visa</button>
-                        </div>
-    
-                        <div class="w-24">
-                            <button class="btn w-full bg-black text-white hover: btn-white hover:text-black mr-10">Paypal</button>
+                        <div class="flex justify-center">
+                            <input type="" placeholder="Payment Method" class="input input-bordered w-50 h-10 my-2" />
                         </div>
                     </div>
     

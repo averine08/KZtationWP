@@ -15,9 +15,21 @@
 
   <div class="w-full ml-24 my-10 flex items-center gap-3">
     <p>Filter : </p>
-    <button class="btn ">
-        
-    </button>
+    <details class="dropdown">
+    <summary class="m-1 btn">Price</summary>
+  <ul class="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
+    <li><a>Highest</a></li>
+    <li><a>Lowest</a></li>
+  </ul>
+  </details>
+
+  <details class="dropdown">
+    <summary class="m-1 btn">Date</summary>
+  <ul class="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
+    <li><a>Latest</a></li>
+    <li><a>Oldest</a></li>
+  </ul>
+  </details>
 
   </div>
   <div class="container ml-24 mt-20 grid grid-cols-4 content-evenly mb-10">
