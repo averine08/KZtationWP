@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('body')
-  <div class=" w-full mx-24 mt-40 bg-red-400">
+  <div class=" w-full mx-24 mt-40">
     <h1 class="text-ungu text-4xl font-bold">
         All Product
     </h1 >
@@ -15,7 +15,10 @@
 
   <div class="w-full ml-24 my-10 flex items-center gap-3">
     <p>Filter : </p>
-    <button class="btn "></button>
+    <button class="btn ">
+        
+    </button>
+
   </div>
   <div class="container ml-24 mt-20 grid grid-cols-4 content-evenly mb-10">
     @foreach($data as $pr)

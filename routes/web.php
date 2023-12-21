@@ -126,6 +126,10 @@ Route::delete('/payment-detail/{params_id}', [PaymentDetailController::class, 'd
 Route::get('transactionhistory', function(){
     return view('layouts/transactionhistory');
 });
+
+Route::get('/cart', function(){
+    return view('cart');
+})->name('cart');
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Auth::routes();
 
