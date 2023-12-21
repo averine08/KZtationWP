@@ -32,11 +32,11 @@ Route::view('/login', 'login')->name('login');
 Route::view('/register', 'register')->name('register');
 
 Route::middleware(['auth.user'])->group(function(){
-    // Route::view('/cart', 'cart')->name('cart');
-    Route::get('/cart/{id}', [CartController::class, 'view_cart']);
+    Route::get('/cart/{id}', [CartController::class, 'view_cart'])->name('cart.view'); // Ini cart harus passing id dari paymentheader
+    Route::view('/cart', 'cart')->name('cart');
     // routes/web.php
     Route::post('/cart/add/{id}', [CartController::class, 'addToCart'])->name('cart.add');
-
+    Route::post('/cart/adds/', [CartController::class, 'update_paid'])->name('cart.adds'); // Ini harus passing id dari user
     Route::view('/payment', 'payment')->name('payment');
     Route::view('/transactionhistory', 'transactionhistory')->name('transactionhistory');
 });

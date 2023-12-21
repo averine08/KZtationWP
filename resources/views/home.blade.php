@@ -46,6 +46,12 @@
                 </div>
             </div>
         </div>
+
+    </div>
+    <a href="/artist">Go To Artist</a>
+    <a href="{{ route('cart.view', ['id' => auth()->user()->id])}}">Cart</a>
+</div>
+
         <div class="w-full flex items-center justify-center my-10 ">
             <img src="{{ URL::asset('assets/banner_1.svg') }}" class="w-[80%]" alt="logo">
         </div>
